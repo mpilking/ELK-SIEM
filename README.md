@@ -34,14 +34,10 @@ What is Kibana?
 
 ## Required Software
 
-- Hosting Server Software 
-
-- Ubuntu Server 18.04 LTS **#Option 2:**
-> https://ubuntu.com/download/server
-
+Ubuntu Server 20.04 LTS
 - Direct Download:
 
-> https://releases.ubuntu.com/18.04.5/ubuntu-18.04.5-live-server-amd64.iso
+> https://releases.ubuntu.com/20.04.2/ubuntu-20.04.2-live-server-amd64.iso
 
 - The Hypervisor that you use is up to you but, the process is still the same.
 - You can use linux or windows for the base hypervisor install.
