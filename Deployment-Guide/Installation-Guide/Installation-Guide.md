@@ -6,7 +6,7 @@ I have listed some install steps below to help you re-create the same install bu
 
 ## Requirements
 
-- **Ubuntu** Ubuntu 18.04 LTS Linux distribution.
+- **Ubuntu** Ubuntu 20.04 LTS Linux distribution.
 - **Java** 8
 - **Git repository**
 - **Elastic repository** 
@@ -15,22 +15,28 @@ I have listed some install steps below to help you re-create the same install bu
 
 - **Some of these Requiements are already installed in Ubuntu!**
 
-## Ubuntu 18.04 LTS Linux Distribution
+## Ubuntu 20.04 LTS Linux Distribution
 
  First we need to install ubuntu, this can be on a VMware or Oracle VirtualBox setup. Or if you have the physical hardware to spare that will work as well.
 
 Note: Just make sure you have SSH access enabled once the server install is completed and know the IP address of the machine. Or that you can login through the GUI and open a Terminal.
 
-Note: To configure a static IP address on your Ubuntu 18.04 LTS server you need to modify a relevant netplan network configuration file within **/etc/netplan/** directory.
+Note: To configure a static IP address on your Ubuntu 20.04 LTS server you need to modify a relevant netplan network configuration file within **/etc/netplan/** directory.
 
-- Configure a static IP address:
+
 
 ~~~
 cd  /etc/netplan/
-ls
 ~~~
 
-Once you change into this directory and list the contents. We will need to look for our interface name. Remember to copy that Interface name, you will need it later.
+- Now install Networking Tool:
+
+~~~
+sudo apt install net-tools
+~~~
+
+
+Once that is done, now we will need to look for our interface name. Remember to copy that Interface name, you will need it later.
 
 - Display network info:
 
@@ -38,13 +44,8 @@ Once you change into this directory and list the contents. We will need to look 
 ifconfig -v
 ~~~
 
-- Copy the name and clear the screen:
 
-~~~
-clear
-~~~
-
-Look for your interface name mines was **enp1s0** and change you values to match you network card info:
+Look for your interface name mines was **enp1s0** and change your values to match you network card info.
 
 - You should see a file like this one after you list the directory contents:
 
@@ -58,7 +59,9 @@ Look for your interface name mines was **enp1s0** and change you values to match
 sudo nano 00-installer-config.yaml
 ~~~
 
-- Just copy and modify the contents with your data below, then paste it back in and save with CTRL + x:
+Just copy and modify the contents with your data below, then paste it back in and save with CTRL + x.
+
+- Configure a static IP address:
 
 ~~~
 network:
@@ -116,7 +119,6 @@ sudo reboot
 
 ~~~
 sudo apt-get install openjdk-8-jdk -y
-java -version
 ~~~
 
 Now lets add the Elastic Repos into our system!
@@ -297,19 +299,6 @@ sudo systemctl enable kibana
 
 ~~~
 sudo systemctl status kibana
-~~~
-
-Allow Traffic on Port 5601
-If UFW firewall is enabled on your Ubuntu system, you need to allow traffic on port 5601 to access the Kibana dashboard.
-
-- First check if the firewall is running:
-~~~
-sudo ufw status verbose
-~~~
-- If it is not then you can skip this line, but it won't hurt to add it. I did!
-
-~~~
-sudo ufw allow 5601/tcp
 ~~~
 
 - To access Kibana, open a web browser and browse to the following address:
