@@ -9,14 +9,7 @@ Main page for Elastic Agent.
 
 https://www.elastic.co/downloads/elastic-agent
 
-Or the file download it's self!
-
 Note: Download the Agent configs for x64 bit zip file. 
-
-- Windows x64 shortcut download:
-
-https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-7.12.0-windows-x86_64.zip
-
 
 ![](https://github.com/watsoninfosec/private/blob/main/Deployment-Guide/Fleet-Agent/screenshots/agent-config.png)
 
