@@ -1,4 +1,4 @@
-### Revised: ElasticSIEM Setup Guide
+### ElasticSIEM Setup Guide
 
 This setup process is for creating the **Elasticsearch** & **Kibana** Certificates for the **Fleet Agent** enrollment stage.
 

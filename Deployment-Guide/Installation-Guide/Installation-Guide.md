@@ -125,7 +125,6 @@ Now lets add the Elastic Repos into our system!
 
 + Add Elastic Repository:
 ~~~
-
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 ~~~
 
